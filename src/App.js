@@ -1,24 +1,35 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+// import ReactDOM from 'react-dom/client';
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import Layout from "./pages/Layout";
+import Home from "./pages/Home";
+import Collection from "./pages/Collection";
+import Exhibits from "./pages/Exhibits";
+import Archive from "./pages/Archive";
+import Bibliography from "./pages/Bibliography"
+import Contact from "./pages/Contact";
+import About from "./pages/About";
+import Mug from "./pages/Mug";
+import Text from "./pages/Text";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="mug" element={<Mug />} />
+        <Route path="collection" element={<Collection />} />
+        <Route path="exhibits" element={<Exhibits />} />
+        <Route path="archive" element={<Archive />} />
+        <Route path="text" element={<Text />} />
+        <Route path="bibliography" element={<Bibliography />} />
+        <Route path="contact" element={<Contact />} />
+        <Route path="about" element={<About />} />
+      </Route>
+    </Routes>
+    </BrowserRouter>
   );
 }
 
