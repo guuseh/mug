@@ -12,6 +12,7 @@ import Contact from "./pages/Contact";
 import About from "./pages/About";
 import Mug from "./pages/Mug";
 import Text from "./pages/Text";
+import Mug3D from "./components/Mug3D";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="bibliography" element={<Bibliography />} />
         <Route path="contact" element={<Contact />} />
         <Route path="about" element={<About />} />
+        <Route path="mug3D" element={<Mug3D />} />
       </Route>
     </Routes>
     </BrowserRouter>
