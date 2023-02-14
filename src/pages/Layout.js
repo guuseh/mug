@@ -4,7 +4,7 @@ import { Outlet, Link } from "react-router-dom";
 export default function layout() {
   return (
     <>
-        <nav>
+        {/* <nav>
             <ul>
                 <li>
                     <Link to="/collection">Collection 1</Link>
@@ -31,7 +31,7 @@ export default function layout() {
                     <Link to="/">Restart</Link>
                 </li>
             </ul>
-        </nav>
+        </nav> */}
 
         <Outlet />
     </>

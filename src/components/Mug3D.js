@@ -27,7 +27,7 @@ export default function Mug3D() {
       <group>
       <Model />
       </group>
-      <OrbitControls/>
+      <OrbitControls autoRotate/>
     </Canvas>
     </Suspense>
     </>
