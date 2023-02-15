@@ -1,9 +1,29 @@
 
 body{
-    background-color: yellow;
+    height: 100vh;
+    background-image: url("../img/linentexture.jpeg");
+    background-repeat: repeat;
+}
+ 
+.canvas{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+} 
+
+.insideCanvas{
+    width: 300px;
+    height: 200px; 
+    border: black solid;
+    background-color: white;
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
 }
 
-.canvas{
-    width: 30vw;
-    height: 30vh;
+#colorPicker{
+    position: relative;
+    float: right;
 }

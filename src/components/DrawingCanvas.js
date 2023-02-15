@@ -1,16 +1,21 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import { Stage, Layer, Line, Text } from "react-konva";
-// import "../style/drawing.css";
+import "../style/drawing.css";
 
-export default function Drawing({containerRef}) {
+export default function DrawingCanvas({containerRef}) {
 
     const [tool, setTool] = React.useState('pen');
     const [lines, setLines] = React.useState([]);
+    const [colorArray, setColorArray] = React.useState([]);
+    const [colorPick, setColorPick] = React.useState('#000000');
     const isDrawing = React.useRef(false);
+
+    //console.log(lines)
 
     const handleMouseDown = (e) => {
         isDrawing.current = true;
         const pos = e.target.getStage().getPointerPosition();
+        setColorArray([...colorArray, colorPick])
         setLines([...lines, {tool, points: [pos.x, pos.y]}]);
     };
 
@@ -31,33 +36,54 @@ export default function Drawing({containerRef}) {
         isDrawing.current = false;
     };
 
-    const containerWidth = containerRef.current.offsetWidth;
-    const containerHeight = containerRef.current.offsetHeight;
+
+
+    // let [element, setElement] = useState();
+
+    // useEffect(() => {
+
+
+    //     console.log("containerRef");
+    //     console.log(containerRef);
+    //     if(containerRef.current){
+
+    //         setElement(containerRef);
+    //     }
+    // }, []);
+
+    //console.log(element.current);
+    //console.log(containerRef.current.offsetWidth);
+
+    
+    //console.log(element.current.offsetWidth);
+    // let containerWidth = element.offsetWidth;
+    // let containerHeight = element.offsetHeight;
 
     // useEffect(()=>{
     //     containerWidth  = containerRef.current.offsetWidth;
     //     containerHeight = containerRef.current.offsetHeight
     // })
+    // const canvasWidth = document.querySelector(".insideCanvas")
+    // console.log(canvasWidth.offsetWidth)
+ 
 
   return (
-    <div>
+    <div className="insideCanvas">
 
         <Stage
-            width={containerWidth}
-            height={containerHeight}
+            width={300}
+            height={200}
             onMouseDown={handleMouseDown}
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUp}
-            //className="Stage"
-            style={{backgroundColor:"white"}}
         >
             <Layer>
                 {lines.map((line,i) => (
                 <Line
                     key={i}
                     points={line.points}
-                    stroke="#df4b26"
-                    strokeWidth={5}
+                    stroke={colorArray[i]}
+                    strokeWidth={2}
                     tension={0.5}
                     lineCap="round"
                     lineJoin="round"
@@ -69,12 +95,16 @@ export default function Drawing({containerRef}) {
             </Layer>
             </Stage>
 
-            <select value={tool} onChange={(e) => {
+            <input type="radio" id="toolPen" name="tool" value="pen" onClick={(e) => {
                 setTool(e.target.value);
-            }} >
-                <option value="pen">Pen</option>
-                <option value="eraser">Eraser</option>
-            </select>
+            }} /><label for="toolPen">pen</label>
+            <input type="radio" id="toolEraser" name="tool" value="eraser" onClick={(e) => {
+                setTool(e.target.value);
+            }}/><label for="toolEraser">eraser</label>
+
+            <input type="color" id="colorPicker" value={colorPick} onChange={(e) => {
+                setColorPick(e.target.value);
+            }}/>
 
     </div>
   )
