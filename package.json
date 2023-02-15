@@ -2,7 +2,6 @@
   "name": "mug",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3000",
   "dependencies": {
     "@react-three/drei": "^9.56.24",
     "@react-three/fiber": "^8.11.1",

@@ -72,7 +72,7 @@ export default function DrawingCanvas({containerRef}) {
 
         <Stage
             width={300}
-            height={200}
+            height={400}
             onMouseDown={handleMouseDown}
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUp}
@@ -98,13 +98,14 @@ export default function DrawingCanvas({containerRef}) {
             <input type="radio" id="toolPen" name="tool" value="pen" onClick={(e) => {
                 setTool(e.target.value);
             }} /><label for="toolPen">pen</label>
+            <input type="color" id="colorPicker" value={colorPick} onChange={(e) => {
+                setColorPick(e.target.value);
+            }}/><br/>
             <input type="radio" id="toolEraser" name="tool" value="eraser" onClick={(e) => {
                 setTool(e.target.value);
             }}/><label for="toolEraser">eraser</label>
 
-            <input type="color" id="colorPicker" value={colorPick} onChange={(e) => {
-                setColorPick(e.target.value);
-            }}/>
+            
 
     </div>
   )
