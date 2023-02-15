@@ -1,3 +1,46 @@
-body{
+/* body{
     height: 100vh;
+} */
+
+.text p{
+    margin-left: 2rem;
+    margin-right: 2rem;
+    position: relative;
 }
+
+.text{
+    height: 100%;
+    /* border: solid red 1px; */
+}
+
+#bottomP{
+    position: absolute;
+    bottom: 5rem;
+}
+
+#next{
+    z-index: 20;
+    position: relative;
+    justify-content: space-between;
+    display: flex;
+    /* border: solid white 0.1px; */
+    padding: 3rem 3rem 1rem 3rem;
+    background-image: url("testfabric2.png");
+    background-size:cover;
+}
+#next img{
+    height: 2rem;
+}
+#skipButton{
+    z-index: 20;
+    position: absolute;
+    bottom: 0;
+    padding: 1.5rem 3rem 0.5rem 2rem;
+    background-image: url("testfabric2.png");
+    background-size:cover;
+}
+
+/* .mugCss{
+    border: solid white 0.1px;
+    padding-top: 3rem;
+}  */

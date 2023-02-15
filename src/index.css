@@ -1,10 +1,44 @@
+@font-face{
+  font-family: syne;
+  src: url(style/SyneMono.ttf)
+}
+@font-face{
+  font-family: brevier;
+  src: url(style/BrevierViennese.otf)
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "syne";
+  font-size: 1.1rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+a{
+  color: white;
+  text-decoration: none;
+}
+a:visited{
+  color: white;
+}
+
+h1{
+  font-family: "brevier";
+}
+
+h3{
+  font-family: "brevier";
+  font-size: 1.5rem;
+  padding: 0;
+  margin: 0;
+}
+
+h4{
+  font-family: "brevier";
+  font-size: 1.1rem;
+  padding: 0;
+  margin: 0;
 }
 
 code {

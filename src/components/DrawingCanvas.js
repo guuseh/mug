@@ -76,6 +76,9 @@ export default function DrawingCanvas({containerRef}) {
             onMouseDown={handleMouseDown}
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUp}
+            onTouchStart={handleMouseDown}
+            onTouchEnd={handleMouseUp}
+            onTouchMove={handleMouseMove}
         >
             <Layer>
                 {lines.map((line,i) => (
