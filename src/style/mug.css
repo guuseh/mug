@@ -31,6 +31,9 @@
 #next img{
     height: 2rem;
 }
+.nextButton{
+    cursor: pointer;
+}
 #skipButton{
     z-index: 20;
     position: absolute;

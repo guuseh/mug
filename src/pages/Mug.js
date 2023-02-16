@@ -22,7 +22,7 @@ export default function Mug() {
 
   return (
     <div className="mugCss">
-    <div id="next"><img src="person.png"/><h3 className="nextButton" onTouchStart={() => { setTrigger((trigger) => trigger + 1)}}>1/20 →</h3></div>
+    <div id="next"><img src="person.png"/><h3 className="nextButton" onClick={() => { setTrigger((trigger) => trigger + 1)}}>1/20 →</h3></div>
     <div className="text">
     <p id="topP">Some text about this mug.
        Family to me is the people who are closest to me. 

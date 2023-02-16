@@ -1,6 +1,98 @@
+body{
+    height: 100%;
+}
+
 .landing{
-    margin: 3rem 2rem 3rem 2rem;
-    height: 100vh;
-    border: solid white;
+    margin: 0rem;
+    /* padding-top: 3rem; */
+    height: 100%;
+    /* border: solid white; */
     overflow:auto;
+}
+
+.header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../style/testfabric2.png");
+    background-size: 100% 100%;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+}
+
+ .header img{
+    height: 10vh;
+    padding-bottom: 1rem;
+} 
+
+.landing p{
+    margin: 0 2rem 1.5rem 2rem;
+}
+
+.footer{
+    box-sizing: border-box;
+    position: relative;
+    bottom: 0;
+    background-image: url("../style/testfabric2.png");
+    background-size: 100% 100%;
+    width: 100vw;
+    text-align: center;
+    padding: 5rem 0rem 1rem 0rem;
+}
+.footer h3{
+    padding: 1rem;
+    position: absolute;
+    background-image: url("../style/testfabric2.png");
+    background-size: 100% 100%;
+    z-index: 10;
+    top: 35%;  
+    left: 50%; 
+    transform: translate(-50%, -50%);
+}
+#end{
+    width: 100vw;
+    position: relative;
+    margin-left: auto;
+    margin-right: 1rem;
+}
+
+.paragraph{
+    position: relative;
+    margin-bottom: 3rem;
+    /* border: solid white; */
+}
+#one{
+    position: absolute;
+    height: 15vh;
+    right: 0;
+    top:-10vh;
+    /* border: solid white; */
+}
+#synergy{
+    width: 60vw;
+    left: 30vw;
+    position: relative;
+}
+#two{
+    position: absolute;
+    height: 17vh;
+    top: -20vh;
+    left: 7vw;
+}
+#three{
+    position: absolute;
+    height: 7vh;
+    top: -7vh;
+    left: 2vw;
+    transform: rotate(-20deg);
+}
+#four{
+    position: absolute;
+    height: 15vh;
+    bottom: -12vh;
+    right: 2rem;
+    /* border: solid white; */
+    transform: scaleX(-1);
+    filter: hue-rotate(270deg);
 }

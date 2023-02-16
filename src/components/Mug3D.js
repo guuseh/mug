@@ -44,7 +44,7 @@ function Model({trigger}){
 
   const baseUrl = steps[currentStep];
 
-  const gltf = useGLTF(baseUrl)
+  const gltf = useGLTF(baseUrl);
   return <primitive object ={gltf.scene} />
 
     }
@@ -54,12 +54,12 @@ export default function Mug3D({trigger}) {
   return (
     <>
     <Suspense fallback={null}>
-    <Canvas camera={{ position: [0,0,-0.16]}} style={styles} frameloop="demand">
+    <Canvas camera={{ position: [0,0,-0.16]}} style={styles}>
       <ambientLight intensity={1} />
       <group>
       <Model trigger={trigger}/>
       </group>
-      <OrbitControls enableZoom={false} autoRotate/>
+      <OrbitControls autoRotate enableZoom={false} />
     </Canvas>
     </Suspense>
     </>
