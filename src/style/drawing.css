@@ -14,15 +14,101 @@ body{
     left: 50%;
     transform: translate(-50%, -50%); 
 } 
+.canvas h4{
+    text-align: center;
+}
 
 .insideCanvas{
     width: 300px;
     height: 400px; 
-    border: black solid;
+    /* border: black solid; */
     background-color: white;
 }
 
 #colorPicker{
     position: relative;
     float: right;
+}
+
+.explanation{
+    box-sizing: border-box;
+    position: absolute;
+    z-index: 5;
+    padding: 1rem 1rem 3rem 1rem;
+    width: 100vw;
+}
+.explanation p{
+    background-image: url("../style/testfabric2.png");
+    background-size: 100% 100%;
+    padding: 3rem 3rem 3rem 3rem;
+    font-size: 0.95rem;
+    margin: 0;
+    z-index: 5;
+    margin-top: 3rem;
+}
+
+.close{
+    position: absolute;
+    right: 1rem;
+}
+.close h4{
+    /* border: solid 0.5px white; */
+    width: min-content;
+    padding: 0.5rem 2rem 0.5rem 2rem;
+    /* border-radius: 1rem; */
+    /* background: white; */
+    background-image: url("../style/testfabric2.png");
+    background-size: 100% 100%;
+    filter:drop-shadow(0px 1px 2px rgba(255,255,255,0.5));
+}
+
+.buttons{
+    position: absolute;
+    bottom: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100vw;
+}
+
+.buttons h4{
+    display: inline;
+    background-image: url("../style/testfabric2.png");
+    background-size: 100% 100%;
+    padding: 1rem;
+}
+
+.popUp{
+    position: absolute;
+    background-image: url("../style/testfabric2.png");
+    background-size: 100% 100%;
+    padding: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 1rem;
+}
+
+.popUp textarea{
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: #FFF9E5;
+    resize: none;
+    height: 5rem;
+}
+
+.buttonsPopUp{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.buttonsPopUp h4{
+    background-image: url("../style/testfabric2.png");
+    background-size: 100% 100%;
+    padding: 0.5rem 2rem 0.5rem 2rem;
 }

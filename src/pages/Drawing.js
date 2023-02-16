@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import DrawingCanvas from "../components/DrawingCanvas"
 import "../style/drawing.css"
 import { useNavigate } from 'react-router-dom'
@@ -7,6 +7,11 @@ import { useNavigate } from 'react-router-dom'
 export default function Drawing() {
     const containerRef = useRef();
     const navigate = useNavigate()
+    const [explanation, setExplanation] = useState(true);
+    const [icon, setIcon] = useState(true);
+    const [button, setButton] = useState(false);
+    const [popUp, setPopUp] = useState(false);
+    const [count, setCount] = useState(80)
 
     // React.useEffect(() => {
     //     console.log(containerRef.current);
@@ -25,17 +30,51 @@ export default function Drawing() {
       console.log("unmount");
     }, [] );
 
+    const handleText = () => {
+      setExplanation(!explanation);
+      setIcon(!icon);
+      setButton(!button);
+    }
+
 
   return (
     <div className="drawing">
 
+        <div className="explanation ">
+        <div className="close" onClick={handleText}>
+          <h4>{icon ? `↑` : "↓"}</h4></div>
+        { explanation ? <p>The way we define the word ‘family’ is rooted in its social construction: 
+        as a society collectively (over time) we decided that family has certain 
+        limitations and requirements. Our shared belief in this transformed what is 
+        essentially a piece of fiction, into a relatively undeniable fact. But in 
+        reality, it is still just something that we made up. So it could be changed.
+        Think critically: What does family mean to you? How do you define it? Why do 
+        you think you define it this way? Does it correlate with society’s expectations 
+        of a family? Why (not)? How would you describe the concept of family? 
+        How would you visualise it? Close the pop-up to start drawing.</p> : null }
+        
+        </div>
         <div className="canvas" ref={containerRef}>
+          <h4>how do you see family?</h4>
         <DrawingCanvas containerRef={containerRef}/>
         </div>
-        <button onClick={() => {
-          navigate('/')
-        }}>click</button>
 
+        { button ? <div className="buttons">
+          <h4 onClick={() => {navigate('/archive')}}>skip</h4>
+          <h4 onClick={function() {setPopUp(true); setButton(!button)}}>submit</h4>
+        </div> : "" }
+
+        { popUp ? 
+        <div className="popUp">
+          <p>Would you like to leave a short explanation for your drawing?</p>
+          <textarea name="textInput" rows="2" placeholder="My drawing is about..." maxLength="80"
+            onChange={e => setCount(80 - e.target.value.length)}></textarea>
+          <div style={{float:"right"}}>{count}</div>
+          <div className="buttonsPopUp">
+            <h4 onClick={() => {navigate('/archive')}}>no</h4>
+            <h4 onClick={() => {navigate('/archive')}}>submit</h4></div>
+          </div> 
+        : "" }
     </div>
   )
 }

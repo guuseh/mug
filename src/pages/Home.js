@@ -1,8 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import '../index.css'
 import '../style/landing.css'
+import { useNavigate } from 'react-router-dom';
 
 export default function Home() {
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth"
+    });
+  },[])
+  
+  const navigate = useNavigate();
 
   // React.useEffect(() => {
   //   document.body.style.overflow = "visible";
@@ -89,7 +100,7 @@ export default function Home() {
       </div>
 
       <div className="footer">
-      <h3>{'>>>>'}enter{'>>>>'}</h3>
+      <h3 onClick={() => {navigate('/mug')}}>{'>>>>'}enter{'>>>>'}</h3>
       <img src="img/end.png" id="end" />
       </div>
     </div>

@@ -14,6 +14,9 @@ import Mug from "./pages/Mug";
 import Text from "./pages/Text";
 import Mug3D from "./components/Mug3D";
 import Drawing from "./pages/Drawing";
+import ScrollToTop from "./components/Scroll";
+
+
 
 function App() {
   return (

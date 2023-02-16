@@ -8,10 +8,29 @@ import Mug3D from "../components/Mug3D";
 export default function Mug() {
 
   const [trigger, setTrigger] = useState(0);
-
+ 
   React.useEffect(() => {
+    document.body.style.overflow = "hidden";
     document.body.style.height = "100vh";
+    document.body.style.maxHeight = "-webkit-fill-available";
   }, []);
+
+  React.useEffect( () => () => {
+    document.body.style.overflow = "visible";
+    document.body.style.height = "100%";
+    document.body.style.maxHeight = "100%";
+    console.log("unmount");
+  }, [] );
+
+  const [nr, setNr] = useState(1);
+
+  const count = () => {
+    if((nr) > 19){
+      setNr((nr) => nr-19) 
+    } else{
+      setNr((nr) => nr+1);
+    }
+  }
 
   // const h3 = document.querySelector(".nextButton");
   // h3.addEventListener("click", function(){
@@ -22,7 +41,11 @@ export default function Mug() {
 
   return (
     <div className="mugCss">
-    <div id="next"><img src="person.png"/><h3 className="nextButton" onClick={() => { setTrigger((trigger) => trigger + 1)}}>1/20 →</h3></div>
+    <div id="next"><img src="person.png"/>
+    <h3 className="nextButton" 
+      onClick={() => { setTrigger((trigger) => trigger + 1); count()}}>{nr}/20 →</h3>
+    </div>
+
     <div className="text">
     <p id="topP">Some text about this mug.
        Family to me is the people who are closest to me. 
