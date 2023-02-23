@@ -2,6 +2,7 @@
     margin: 2rem;
     margin-top: 4rem;
     min-height: 100vh;
+    height: 100%;
 }
 
 .base h1{
@@ -19,22 +20,37 @@
 }
 
 .imageContainer{
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 0.5rem;
+    row-gap: 0.5rem;
+}
+
+.imageContainer2{
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 0.5rem;
     row-gap: 0.5rem;
 }
 
-.imageContainer div{
+/* .imageContainer div{
     box-sizing: border-box;
     display: block;
     width: 100%;
     height: 30vh;
-    background-color: white;
-    /* border: solid red; */
-}
+    background-color: #FFF9E5;
+    /* border: solid red; 
+} */
 .imageContainer div img{
+    max-height: 100%;
     max-width: 100%;
+    /* background-color: black; */
+}
+.imageContainer2 img{
+    max-height: 100%;
+    max-width: 100%;
+    /* background-color: black; */
 }
 
 .sticky{
@@ -42,4 +58,15 @@
     bottom: 0;
     left: 0;
     /* border: solid 1px; */
+}
+
+.closeBtn{
+    position: absolute;
+    z-index: 20;
+    bottom: 15vh;
+    left: 50vw;
+    transform: translate(-50%,0);
+    background-image: url("../style/testfabric2.png");
+    background-size: 100% 100%;
+    padding: 1rem 3rem 1rem 3rem;
 }
