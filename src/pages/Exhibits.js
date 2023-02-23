@@ -29,12 +29,13 @@ export default function Exhibits() {
       
       <h1>past exhibitions</h1>
 
-      <div className="imageContainer">
-        <div></div><div></div>
-        <div></div><div></div>
-        <div></div><div></div>
-        <div></div><div></div>
-        <div></div><div></div>
+      <p>Dutch Design Week, October 2022, Eindhoven (NL)</p>
+      <div className="imageContainer2">
+      <img src="img/Family-DDW-1.jpeg"/>
+      <img src="img/Family-DDW-2.jpeg"/>
+      <img src="img/Family-DDW-4.jpeg"/>
+      <img src="img/Family-DDW-5.jpeg"/>
+      <img src="img/Family-DDW-3.jpeg"/>
       </div>
 
     

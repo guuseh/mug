@@ -21,6 +21,12 @@ export default function Contact() {
     setIcon(!icon)
   }
 
+  const bottomImg = {
+    position: "relative",
+    left: "40%",
+    height: "10vh"
+  }
+
   return (
     <>
     
@@ -29,9 +35,15 @@ export default function Contact() {
       
       <h1>Get in touch</h1>
 
-      <p>If you liked it and u wanna do a workshop some time...</p>
+      <p>Do you want to enter the process of creating your own mug, have a question or just want to chat?</p>
 
-      <p>Hit me up b</p>
+      <p>You can send me an e-mail at:<br/>
+      guus-99 (at) live (dot) nl</p>
+      
+      <p>Or send me a message on Instagram:<br/>
+      @guus.eh</p>
+
+      <img src="img/1.png" style={bottomImg}/>
 
     
     </div>

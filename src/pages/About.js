@@ -21,19 +21,56 @@ export default function About() {
     setIcon(!icon)
   }
 
+  const styleImg = {
+    position: "absolute",
+    left: "45vw",
+    height: "10vh",
+    top: "2rem"
+  }
+  const bottomImg = {
+    position: "relative",
+    left: "40%",
+    height: "10vh"
+  }
+
   return (
     <>
     
     <div className="base">
     <img src="img/testfabric2.png" className="baseHeader"/>
       
-      <h1>About</h1>
+    <img src="img/1.png" style={styleImg}/>
+      <h1>About</h1> 
+      <br/>
+      <h3>(de)constructing family models</h3>
+      <p>Guus Hoeberechts<br/>2022</p>
+      <p>What are the normative ideas that surround ‘the family’ and how far can you deviate from them and still be considered one? 
+      When we picture a family, why do we often imagine a nuclear one when there are many ways to form strong familial relationships?</p>
 
-      <p>This is a text about the project... </p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt blandit sem at rhoncus. Aliquam aliquam, eros id auctor vulputate, lorem neque gravida lectus, vel luctus nisi eros id mi. Vivamus velit ipsum, congue fermentum mi rutrum, egestas pulvinar enim. Etiam hendrerit ut mi quis mattis. Aliquam elementum eget massa vitae vestibulum. Nam at orci scelerisque, dapibus tortor vitae, mollis diam. Fusce aliquet mauris vel gravida mollis. Aenean et enim mollis, interdum erat non, consequat dolor. Donec rhoncus, sem ut ullamcorper accumsan, augue dui facilisis turpis, sed luctus nunc est non purus. In ornare risus lectus. Duis iaculis ipsum sit amet lacus condimentum, a faucibus magna elementum.</p>
+      <p>How do social constructs such as the family come into existence and begin to define the invisible rules we live by? The social 
+      construction of reality partly determines how we inhabit this world, but its development goes unnoticed. We humans established 
+      long ago (over a very extended period of time) that some things are meant to be a certain way. Unknowingly or unreflectively, 
+      we still live by these definitions today. They have no inherent meaning but the meaning we collectively give them, a meaning that 
+      could be completely different if the past had diverged slightly. Is there a way to change our understanding to create a new future?</p>
 
-      <p>Sed sed dolor convallis, lacinia velit quis, placerat risus. Aenean porta eros quis egestas sollicitudin. Praesent odio leo, faucibus ut libero ut, lobortis cursus elit. Donec et nunc et enim tempor dapibus id sit amet erat. Etiam imperdiet sodales porta. Maecenas interdum orci vitae mollis condimentum. Proin porta quam ipsum, ut pretium ipsum commodo at. Aenean vitae dapibus orci, a molestie ante. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam vitae felis dignissim, semper leo nec, dapibus elit. Aliquam elementum dui ex, nec ornare dui consectetur et. Nunc commodo eu erat ac congue. Pellentesque id risus a ipsum maximus tincidunt. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+      <p>Our norms are (re)confirmed by the visual and physical representations we see in our day-to-day lives. In the west, we grow up mostly 
+      seeing symbols representing the nuclear family, so we believe that they must carry the one true meaning. The fiction turns into fact. 
+      By presenting alternatives, ‘(de)constructing family models’ seeks to open up the boundaries we have placed on the social concept of a 
+      family. Because sometimes the emotional conditions we expect from a family are not fulfilled by those related to us.</p>
 
+      <p>This collection of everyday cups is transformed to tell a range of different stories about the family. The simple objects are familiar 
+      to us and for daily use, making them the ideal artefact for spreading new ideas, and cementing a transforming social construct. The 
+      illustrations are derived from a series of intimate conversations about family, and created collaboratively to visualise each individual’s 
+      unique perception of family. They vary from abstract images to literal depictions, just as our personal thoughts do.</p>
+
+      <p>The visitor is invited to contribute to an archive of visualisations on the website, where their drawing will be publicly available to 
+      further guide the conversation and change. Here, they can also read more in- depth information, get an insight into the illustrations on 
+      the cups, or get in contact to possibly have their own cup created, through a one-on-one session or workshop where we talk and visualise together.</p>
+
+      <p>The collection of cups should always be viewed as incomplete, as more stories will consistently reveal themselves while we continue to 
+      unravel our definition of family.</p>
+
+      <img src="img/1.png" style={bottomImg}/>
     
     </div>
     <div className="sticky"><Menu toggle={toggle}/></div>
