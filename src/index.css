@@ -1,15 +1,23 @@
 @font-face{
   font-family: syne;
-  src: url(style/SyneMono.ttf)
+  src: url(style/SyneMono.ttf);
 }
 @font-face{
   font-family: brevier;
-  src: url(style/BrevierViennese.otf)
+  src: url(style/BrevierViennese.otf);
+}
+@font-face{
+  font-family: syneH;
+  src: url(style/SyneTactile-Regular.ttf);
+}
+@font-face{
+  font-family: victor;
+  src: url(style/VictorMono-Regular.ttf);
 }
 
 body {
   margin: 0;
-  font-family: "syne";
+  font-family: "victor";
   font-size: 1.1rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -19,26 +27,32 @@ body {
 }
 
 a{
-  color: #FFF9E5;
+  color: black;
   text-decoration: none;
 }
 a:visited{
-  color: #FFF9E5;
+  color: black;
 }
 
 h1{
-  font-family: "brevier";
+  font-family: "syneH";
+  font-size: 8rem;
+  font-weight: normal;
+  padding: 0;
+  margin: 0;
+  line-height: 7rem;
 }
 
 h3{
-  font-family: "brevier";
-  font-size: 1.5rem;
+  font-family: "syneH";
+  font-size: 5rem;
   padding: 0;
   margin: 0;
+  font-weight: normal;
 }
 
 h4{
-  font-family: "brevier";
+  font-family: "syneH";
   font-size: 1.1rem;
   padding: 0;
   margin: 0;
@@ -47,4 +61,15 @@ h4{
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+@media only screen and (max-width: 600px){
+  h1{
+    font-size: 3rem;
+    line-height: 2.5rem;
+  }
+  h3{
+    font-size: 2.5rem;
+    line-height: 2rem;
+  }
 }

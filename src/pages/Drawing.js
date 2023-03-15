@@ -40,9 +40,11 @@ export default function Drawing() {
   return (
     <div className="drawing">
 
-        <div className="explanation ">
+        <h1>What do you <br/>think?</h1>
+        
         <div className="close" onClick={handleText}>
           <h4>{icon ? `↑` : "↓"}</h4></div>
+          <div className="explanation ">
         { explanation ? <p>The way we define the word ‘family’ is rooted in its social construction: 
         as a society collectively (over time) we decided that family has certain 
         limitations and requirements. Our shared belief in this transformed what is 
@@ -51,17 +53,16 @@ export default function Drawing() {
         Think critically: What does family mean to you? How do you define it? Why do 
         you think you define it this way? Does it correlate with society’s expectations 
         of a family? Why (not)? How would you describe the concept of family? 
-        How would you visualise it? Close the pop-up to start drawing.</p> : null }
-        
+        How would you visualise it? Close the pop-up to start drawing.</p> : <p style={{display:"none"}}></p> }
         </div>
-        <div className="canvas" ref={containerRef}>
-          <h4>how do you see family?</h4>
+        
+        <div className="canvas" ref={containerRef}> 
         <DrawingCanvas containerRef={containerRef}/>
         </div>
 
         { button ? <div className="buttons">
-          <h4 onClick={() => {navigate('/archive')}}>skip</h4>
-          <h4 onClick={function() {setPopUp(true); setButton(!button)}}>submit</h4>
+          <h3 onClick={() => {navigate('/archive')}}>skip»</h3>
+          <h3 onClick={function() {setPopUp(true); setButton(!button)}}>submit»</h3>
         </div> : "" }
 
         { popUp ? 
@@ -71,8 +72,8 @@ export default function Drawing() {
             onChange={e => setCount(80 - e.target.value.length)}></textarea>
           <div style={{float:"right"}}>{count}</div>
           <div className="buttonsPopUp">
-            <h4 onClick={() => {navigate('/archive')}}>no</h4>
-            <h4 onClick={() => {navigate('/archive')}}>submit</h4></div>
+            {/* <h3 onClick={() => {navigate('/archive')}}>no</h3> */}
+            <h3 onClick={() => {navigate('/archive')}}>submit»</h3></div>
           </div> 
         : "" }
     </div>

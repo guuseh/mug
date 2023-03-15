@@ -31,7 +31,7 @@ export default function Contact() {
     <>
     
     <div className="base">
-    <img src="img/testfabric2.png" className="baseHeader"/>
+    {/* <img src="img/testfabric2.png" className="baseHeader"/> */}
       
       <h1>Get in touch</h1>
 

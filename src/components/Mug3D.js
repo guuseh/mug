@@ -1,6 +1,7 @@
 import React, { Suspense, useState, useEffect } from 'react'
 import { Canvas } from "@react-three/fiber"
 import { OrbitControls, useGLTF } from "@react-three/drei";
+import { StyleSheet, css } from "aphrodite"
 
 // import { withErrorBoundary } from "react-error-boundary";
 // import Box from "../components/Box"
@@ -13,13 +14,20 @@ import { OrbitControls, useGLTF } from "@react-three/drei";
 //     }`};
 const steps = ["firstmug.glb", "poly2.glb"];
 
-const styles = {
-  height: "80vh",
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%,-50%)",
+const styles = StyleSheet.create({
+  canvas: {
+    height: "80vh",
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%,-50%)",
+    border: "1px solid",
+    width: "35vw",
+  "@media (max-width: 600px)":{
+    width: "90vw",
+  }
 }
+});
 
 function Model({trigger}){
 
@@ -54,7 +62,7 @@ export default function Mug3D({trigger}) {
   return (
     <>
     <Suspense fallback={null}>
-    <Canvas camera={{ position: [0,0,-0.16]}} style={styles}>
+    <Canvas camera={{ position: [0,0,-0.16]}} className={css(styles.canvas)}>
       <ambientLight intensity={1} />
       <group>
       <Model trigger={trigger}/>
@@ -62,6 +70,7 @@ export default function Mug3D({trigger}) {
       <OrbitControls autoRotate enableZoom={false} />
     </Canvas>
     </Suspense>
+    
     </>
   )
 }

@@ -41,23 +41,27 @@ export default function Mug() {
 
   return (
     <div className="mugCss">
-    <div id="next"><img src="person.png"/>
-    <h3 className="nextButton" 
-      onClick={() => { setTrigger((trigger) => trigger + 1); count()}}>{nr}/20 →</h3>
+      <h1>Browse through the collection</h1>
+    <div id="next">
+      {/* <img src="person.png"/> */}
+    <h1 className="nextButton" 
+      onClick={() => { setTrigger((trigger) => trigger + 1); count()}}>{nr}/20 →</h1>
     </div>
-
+    <img src="3d.png"/>
     <div className="text">
-    <p id="topP">Some text about this mug.
+    <p>Some text about this mug.
        Family to me is the people who are closest to me. 
        Not necessarily blood-related.</p>
     
-    <p id="bottomP"><i>"I visualise this as a circle around the middle (me). 
+    <p><i>"I visualise this as a circle around the middle (me). 
        There is a border around the circle, that's hard to break into, but not impossible. 
        The lines at the top are the people who try (and sometimes succeed) to enter the circle. 
        It is also the people that leave the circle for some reason."</i></p>
     </div>
-    <div id="skipButton"><Link to="/drawing"><h4>skip past<br/>the mugs</h4></Link></div>
+    
+    <div id="skipButton"><Link to="/drawing"><h3>continue»</h3></Link></div>
     <Mug3D trigger={trigger}/>
+    
     </div>
   )
 }

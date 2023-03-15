@@ -25,7 +25,7 @@ export default function Exhibits() {
     <>
     
     <div className="base">
-    <img src="img/testfabric2.png" className="baseHeader"/>
+    {/* <img src="img/testfabric2.png" className="baseHeader"/> */}
       
       <h1>past exhibitions</h1>
 

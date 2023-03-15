@@ -17,7 +17,7 @@ export default function Archive() {
     <>
     
     <div className="base">
-    <img src="img/testfabric2.png" className="baseHeader"/>
+    {/* <img src="img/testfabric2.png" className="baseHeader"/> */}
       
       <h1>Archive</h1>
 

@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import '../index.css'
 import '../style/landing.css'
 import { useNavigate } from 'react-router-dom';
+import { Parallax, useParallax, useParallaxController } from 'react-scroll-parallax';
 
 export default function Home() {
 
@@ -15,22 +16,39 @@ export default function Home() {
   
   const navigate = useNavigate();
 
-  // React.useEffect(() => {
-  //   document.body.style.overflow = "visible";
-  //   document.body.style.height = window.innerHeight;
-  //   document.body.style.maxHeight = "";
-  // }, []);
+  const images = useParallax({speed:50})
+  const side = useParallax({speed: 10})
+  
+
+  // const Images = () => {
+  //   const { ref } = useParallax<HTMLDivElement>({ speed:30 , shouldAlwaysCompleteAnimation:true});
+  //   return <div ref={ref} className="images" >
+  //   <img src="img/1.png" id="one" onLoad={() => parallaxController.update()}/>
+  //   <img src="img/2.png" id="two" onLoad={() => parallaxController.update()}/>
+  //   <img src="img/2.png" id="three" />
+  //   <img src="img/2.png" id="four" />
+  //   </div>
+  // }
+  // const parallaxController = useParallaxController();
+
 
   return (
     <div className="landing">
 
+    <div ref={images.ref} className="images">
+        <img src="img/1.png" id="one" />
+        <img src="img/2.png" id="two" />
+        <img src="img/2.png" id="three" />
+        <img src="img/2.png" id="four" />
+    </div>
+
       <div className="header">
+      <h1>(De)constructing <br/>»family models«</h1>
       <img src="person.png"/>
-      <h3 style={{textAlign: "center"}}>(de)constructing family models</h3>
       </div>
 
+      <div className="introduction">
       <div className="paragraph">
-      <img src="img/1.png" id="one" />
       <p>This project stems from a personal interest in the process of social constructs
          coming into existence and defining the invisible rules we live by.</p>
       </div>
@@ -39,12 +57,10 @@ export default function Home() {
       <p>The social construction of reality as I understand it makes up a major part of 
         the world we inhabit. It is the idea that many of the things we believe in are 
         essentially a figment of our shared imagination. </p>
-      <img src="img/synergy.png" id="synergy"/>
+      <img src="img/synergy.png" ref={side.ref} id="synergy"/>
       </div>
 
       <div className="paragraph">
-      <img src="img/2.png" id="two" />
-      <img src="img/2.png" id="three" />
       <p>We, as humans, have defined certain things to be a certain way, a very long 
         time ago, and still unknowingly live by these definitions now. These things have 
         no inherent meaning but the meaning that we collectively give to it.</p>
@@ -57,11 +73,10 @@ export default function Home() {
 
       <p>If tomorrow we would all say: ‘green is for girls and purple is for boys’, 
         and as one shared mind believed in that fact, then that would be our new truth.</p>
-      <img src="img/2.png" id="four" />
       </div>
 
       <div className="paragraph">
-      <p style={{marginTop:"6rem"}}>I am interested in the process by which these social constructs 
+      <p>I am interested in the process by which these social constructs 
       become cemented in our lives.</p>
 
       <p>Why do we believe certain things, when they could have been something completely different if our 
@@ -98,11 +113,13 @@ export default function Home() {
       Is there another way to approach this belief system?</p>
       <p>Preface 2: This is based on the western experience of family.</p>
       </div>
+      </div>
 
       <div className="footer">
-      <h3 onClick={() => {navigate('/mug')}}>{'>>>>'}enter{'>>>>'}</h3>
-      <img src="img/end.png" id="end" />
+      <h3 onClick={() => {navigate('/mug')}}>enter»</h3>
+      {/* <img src="img/end.png" id="end" /> */}
       </div>
+
     </div>
   )
 }

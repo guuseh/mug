@@ -37,7 +37,7 @@ export default function About() {
     <>
     
     <div className="base">
-    <img src="img/testfabric2.png" className="baseHeader"/>
+    {/* <img src="img/testfabric2.png" className="baseHeader"/> */}
       
     <img src="img/1.png" style={styleImg}/>
       <h1>About</h1> 

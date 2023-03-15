@@ -15,11 +15,13 @@ import Text from "./pages/Text";
 import Mug3D from "./components/Mug3D";
 import Drawing from "./pages/Drawing";
 import ScrollToTop from "./components/Scroll";
+import { ParallaxProvider } from 'react-scroll-parallax';
 
 
 
 function App() {
   return (
+    <ParallaxProvider>
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<Layout />}>
@@ -36,6 +38,7 @@ function App() {
       </Route>
     </Routes>
     </BrowserRouter>
+    </ParallaxProvider>
   );
 }
 
