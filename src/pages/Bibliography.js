@@ -15,10 +15,12 @@ export default function Bibliography() {
 
   const [toggle, setToggle] = useState(false);
   const [icon, setIcon] = useState(true);
+  const [bg, setBg] = useState(true);
 
   const handleMenu = () => {
     setToggle(!toggle)
     setIcon(!icon)
+    setBg(!bg)
   }
 
   const bottomImg = {
@@ -33,7 +35,7 @@ export default function Bibliography() {
     <div className="base">
     {/* <img src="img/testfabric2.png" className="baseHeader"/> */}
       
-      <h1>Bibliography</h1>
+      <h1>bibliography</h1>
 
       <p>The Social Construction (1966) of Reality by Peter L. Berger and Thomas Luckmann</p>
       <p>Shared Reality: Experiencing commonality with others' inner states about the world (2009) by Gerald Echterhoff, E. Tory Higgins and John M. Levine</p>
@@ -45,7 +47,7 @@ export default function Bibliography() {
 
     </div>
     <div className="sticky"><Menu toggle={toggle}/></div>
-    <div className="toggle" onClick={() => { handleMenu()}}><h4>{icon ? `↑` : `↓`}</h4></div>
+    <div className={ bg ? "toggle toggled" : "toggle nottoggled" } onClick={() => { handleMenu()}}><h4>{icon ? `↑` : `↓`}</h4></div>
     </>
   )
 }

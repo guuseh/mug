@@ -5,24 +5,21 @@ import { OrbitControls, useGLTF } from "@react-three/drei";
 
 const styles = {
     height: "80vh",
-    position: "absolute",
+    position: "fixed",
     top: "50%",
     left: "50%",
     transform: "translate(-50%,-50%)",
-    // backgroundColor: "black"
   }
   
   function Model({current}){
 
+   const gltf = useGLTF(current);
   
-    const gltf = useGLTF(current);
-    return <primitive object ={gltf.scene} />
-  
-      }
+   return <primitive object ={gltf.scene} />
+  }
+
 
 export default function Mug3Doverlay(props) {
-    
-
     
         return (
           <>

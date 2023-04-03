@@ -1,16 +1,16 @@
-import React, { useRef, useEffect, useState } from 'react'
-import { Stage, Layer, Line, Text } from "react-konva";
+import React, { useEffect } from 'react'
+import { Stage, Layer, Line } from "react-konva";
 import "../style/drawing.css";
+import axios from 'axios';
 
-export default function DrawingCanvas({containerRef}) {
+
+export default function DrawingCanvas({submit}) {
 
     const [tool, setTool] = React.useState('pen');
     const [lines, setLines] = React.useState([]);
     const [colorArray, setColorArray] = React.useState([]);
     const [colorPick, setColorPick] = React.useState('#000000');
     const isDrawing = React.useRef(false);
-
-    //console.log(lines)
 
     const handleMouseDown = (e) => {
         isDrawing.current = true;
@@ -36,12 +36,53 @@ export default function DrawingCanvas({containerRef}) {
         isDrawing.current = false;
     };
 
+    function downloadURI(uri, name){
+        var link = document.createElement('a');
+        link.download = name;
+        link.href = uri;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+
+    const stageRef = React.useRef(null);
+    
+    // useEffect(() => {
+    //     const saveFunction = () => {
+    //         console.log("saved");
+    //         const uri = stageRef.current.toDataURL();
+    //         console.log(uri);
+    //         downloadURI(uri);
+    //     };
+    //     if (submit !== 0){
+    //         saveFunction();
+    //     }
+    // }, [submit]);
+
+    useEffect(() => {
+        
+        const addImage = async () => {
+            const imageObject = {
+                "uri": stageRef.current.toDataURL()
+            }
+            try{
+                await axios.post("https://backend-production-8f5a.up.railway.app/archive", imageObject)
+            }catch(err){
+                console.log(err)
+            }
+        }
+            if (submit !== 0){
+                addImage();
+                console.log("add image")
+            }
+    }, [submit])
+
+    
 
 
     // let [element, setElement] = useState();
 
     // useEffect(() => {
-
 
     //     console.log("containerRef");
     //     console.log(containerRef);
@@ -53,7 +94,6 @@ export default function DrawingCanvas({containerRef}) {
 
     //console.log(element.current);
     //console.log(containerRef.current.offsetWidth);
-
     
     //console.log(element.current.offsetWidth);
     // let containerWidth = element.offsetWidth;
@@ -72,13 +112,14 @@ export default function DrawingCanvas({containerRef}) {
 
         <Stage
             width={300}
-            height={400}
+            height={350}
             onMouseDown={handleMouseDown}
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUp}
             onTouchStart={handleMouseDown}
             onTouchEnd={handleMouseUp}
             onTouchMove={handleMouseMove}
+            ref = {stageRef}
         >
             <Layer>
                 {lines.map((line,i) => (
@@ -86,7 +127,7 @@ export default function DrawingCanvas({containerRef}) {
                     key={i}
                     points={line.points}
                     stroke={colorArray[i]}
-                    strokeWidth={2}
+                    strokeWidth={4}
                     tension={0.5}
                     lineCap="round"
                     lineJoin="round"
@@ -98,17 +139,16 @@ export default function DrawingCanvas({containerRef}) {
             </Layer>
             </Stage>
 
-            <input type="radio" id="toolPen" name="tool" value="pen" onClick={(e) => {
-                setTool(e.target.value);
-            }} /><label for="toolPen">pen</label>
-            <input type="color" id="colorPicker" value={colorPick} onChange={(e) => {
-                setColorPick(e.target.value);
-            }}/><br/>
-            <input type="radio" id="toolEraser" name="tool" value="eraser" onClick={(e) => {
-                setTool(e.target.value);
-            }}/><label for="toolEraser">eraser</label>
+            <input type="color" id="colorPicker" value={colorPick} 
+                onChange={(e) => { setColorPick(e.target.value); }}/>
 
-            
+            <input type="radio" id="toolPen" name="tool" value="pen" 
+                onClick={(e) => { setTool(e.target.value); }}/>
+                <label for="toolPen">pen</label><br/> 
+
+            <input type="radio" id="toolEraser" name="tool" value="eraser" 
+                onClick={(e) => { setTool(e.target.value); }}/>
+                <label for="toolEraser">eraser</label>
 
     </div>
   )

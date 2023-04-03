@@ -1,12 +1,27 @@
 .base{
-    margin: 2rem;
+    margin-left: 14rem;
+    margin-right: 8rem;
     margin-top: 4rem;
+    margin-bottom: 0;
     min-height: 100vh;
     height: 100%;
 }
 
+a{
+    color: #62A357;
+    text-decoration: underline;
+}
+a:visited{
+    color: #62A357;
+}
+
 .base h1{
     margin: 0;
+    text-shadow: 1px 1px 5px #62A357;
+}
+.base h3{
+    text-shadow: 1px 1px 2px black;
+    color: #62A357;
 }
 
 .baseHeader{
@@ -16,13 +31,13 @@
     left: 0;
     z-index: -2;
     height: 30vh;
-    /* border: solid white; */
 }
 
 .imageContainer{
     margin-top: 2rem;
+    margin-bottom: 2rem;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     column-gap: 0.5rem;
     row-gap: 0.5rem;
 }
@@ -34,39 +49,108 @@
     row-gap: 0.5rem;
 }
 
-/* .imageContainer div{
-    box-sizing: border-box;
-    display: block;
-    width: 100%;
-    height: 30vh;
-    background-color: #FFF9E5;
-    /* border: solid red; 
-} */
 .imageContainer div img{
     max-height: 100%;
     max-width: 100%;
-    /* background-color: black; */
 }
 .imageContainer2 img{
     max-height: 100%;
     max-width: 100%;
-    /* background-color: black; */
+}
+
+.hili{
+    background-color: #a3c59d;
 }
 
 .sticky{
     position: sticky;
     bottom: 0;
     left: 0;
-    /* border: solid 1px; */
+}
+.mugImg{
+    transition: filter 0.2s;
+    cursor: pointer;
+}
+.mugImg:hover{
+    filter: blur(4px);
+    animation: shake 0.9s linear infinite;
+}
+
+@keyframes shake{
+    0% { transform: rotate(0deg)}
+    25% { transform: rotate(2deg)}
+    75% { transform: rotate(-2deg)}
+    100% { transform: rotate(0deg)}
+}
+
+.cerImg{
+    position: fixed;
+}
+.cerImg:hover{
+    animation: rotation 5s linear infinite;
+}
+
+#exhone{
+    right: 5vw;
+    height: 20vh;
 }
 
 .closeBtn{
-    position: absolute;
+    position: fixed;
     z-index: 20;
     bottom: 15vh;
     left: 50vw;
     transform: translate(-50%,0);
-    background-image: url("../style/testfabric2.png");
-    background-size: 100% 100%;
+    background-color: white;
     padding: 1rem 3rem 1rem 3rem;
+    border: 1px solid #62A357;
+    cursor: pointer;
+    box-shadow: 1px 1px 20px #62A357;
+}
+
+.archiveimg{
+    box-shadow: 1px 1px 5px #62A357;
+    background-color: white;
+}
+
+@keyframes blur{
+    0%{ filter: blur(0)}
+    100% { filter: blur(4px)}
+}
+
+.loading{
+    text-align: center;
+    color:#62A357;
+}
+
+@media only screen and (max-width: 600px){
+    .base{
+        margin: 1rem;
+        margin-top: 8rem;
+        margin-bottom: 5rem;
+    }
+    .imageContainer{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .base h1{
+        font-size: 4rem;
+        position: fixed;
+        top: 2rem;
+        z-index: -1;
+    }
+    .toggle{
+        display: block;
+    }
+    .toggled{
+        background-color: white;
+        box-shadow: 1px 1px 5px #62A357;
+    }
+    .nottoggled{
+        background-color: transparent;
+    }
+    #exhone{
+        right: 5vw;
+        height: 10vh;
+        top:5vh;
+    }
 }

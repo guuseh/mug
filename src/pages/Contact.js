@@ -5,6 +5,7 @@ import '../style/base.css'
 import Menu from '../components/Menu'
 
 export default function Contact() {
+  
   useEffect(() => {
     window.scrollTo({
       top: 0,
@@ -15,10 +16,13 @@ export default function Contact() {
 
   const [toggle, setToggle] = useState(false);
   const [icon, setIcon] = useState(true);
+  const [bg, setBg] = useState(true);
+
 
   const handleMenu = () => {
     setToggle(!toggle)
     setIcon(!icon)
+    setBg(!bg)
   }
 
   const bottomImg = {
@@ -31,9 +35,8 @@ export default function Contact() {
     <>
     
     <div className="base">
-    {/* <img src="img/testfabric2.png" className="baseHeader"/> */}
       
-      <h1>Get in touch</h1>
+      <h1>get in touch</h1>
 
       <p>Do you want to enter the process of creating your own mug, have a question or just want to chat?</p>
 
@@ -48,7 +51,7 @@ export default function Contact() {
     
     </div>
     <div className="sticky"><Menu toggle={toggle}/></div>
-    <div className="toggle" onClick={() => { handleMenu()}}><h4>{icon ? `↑` : `↓`}</h4></div>
+    <div className={ bg ? "toggle toggled" : "toggle nottoggled" } onClick={() => { handleMenu()}}><h4>{icon ? `↑` : `↓`}</h4></div>
     </>
   )
 }

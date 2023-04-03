@@ -3,27 +3,42 @@ import "../style/menu.css"
 import { useNavigate } from 'react-router-dom'
 
 export default function Menu({toggle}) {
-    // const [toggle, setToggle] = useState(true);
+    
     const navigate = useNavigate();
+    const [moveOut, setMoveout] = useState(false)
+
 
   return (
     <div>
-        { toggle ?
-        <>
-        <div className="menuOn">
-        <h4 className="menuItem" onClick={() => {navigate('/collection')}}>{'>'}&nbsp;&nbsp;collection 1</h4>
-        <h4 className="menuItem" onClick={() => {navigate('/exhibits')}}>{'>'}&nbsp;&nbsp;past exhibitions</h4>
-        <h4 className="menuItem" onClick={() => {navigate('/archive')}}>{'>'}&nbsp;&nbsp;drawing archive</h4>
-        <h4 className="menuItem" onClick={() => {navigate('/text')}}>{'>'}&nbsp;&nbsp;the text</h4>
-        <h4 className="menuItem" onClick={() => {navigate('/bibliography')}}>{'>'}&nbsp;&nbsp;bibliography</h4>
-        <h4 className="menuItem" onClick={() => {navigate('/contact')}}>{'>'}&nbsp;&nbsp;get in touch</h4>
-        <h4 className="menuItem" onClick={() => {navigate('/about')}}>{'>'}&nbsp;&nbsp;about</h4>
-        <h4 className="menuItem" onClick={() => {navigate('/')}}>{'>'}&nbsp;&nbsp;restart</h4>
-        </div>
-
         
-        </>
-        : null }
+        {  toggle ? 
+        <div className="menuOn">
+          <img src="img/cer/10.png" className="topCer"/>
+          <div className="menuItem" onClick={() => {navigate('/archive')}}><img src="/img/cer/3.png" id="menuBG" />&nbsp;drawing archive</div>
+            <div className="menuItem" onClick={() => {navigate('/collection')}}><img src="/img/cer/1.png" id="menuBG" />&nbsp;collection 1</div>
+            <div className="menuItem" onClick={() => {navigate('/exhibits')}}><img src="/img/cer/2.png" id="menuBG" />&nbsp;past exhibitions</div>
+            <div className="menuItem" onClick={() => {navigate('/text')}}><img src="/img/cer/5.png" id="menuBG" />&nbsp;text+bibliography</div>
+            <div className="menuItem" onClick={() => {navigate('/about')}}><img src="/img/cer/6.png" id="menuBG" />&nbsp;about+contact</div>
+            
+            <div id="return" className={moveOut ? "menuItem moveOut" : "menuItem"} 
+                onClick={() => {setMoveout(true); setTimeout(()=> {navigate('/')},400)}}>
+                {'»'}<i>&nbsp;&nbsp;restart</i></div>
+         </div>
+        : 
+        <div className="menuOff">
+          <img src="img/cer/10.png" className="topCer"/>
+          <div className="menuItem" onClick={() => {navigate('/archive')}}><img src="/img/cer/3.png" id="menuBG" />&nbsp;drawing archive</div>
+            <div className="menuItem" onClick={() => {navigate('/collection')}}><img src="/img/cer/1.png" id="menuBG" />&nbsp;collection 1</div>
+            <div className="menuItem" onClick={() => {navigate('/exhibits')}}><img src="/img/cer/2.png" id="menuBG" />&nbsp;past exhibitions</div>
+            <div className="menuItem" onClick={() => {navigate('/text')}}><img src="/img/cer/5.png" id="menuBG" />&nbsp;text+bibliography</div>
+            <div className="menuItem" onClick={() => {navigate('/about')}}><img src="/img/cer/6.png" id="menuBG" />&nbsp;about+contact</div>
+            
+            <div id="return" className={moveOut ? "menuItem moveOut" : "menuItem"} 
+                onClick={() => {setMoveout(true); setTimeout(()=> {navigate('/')},400)}}>
+                {'»'}<i>&nbsp;&nbsp;restart</i></div>
+        </div> 
+        } 
+         
 
     </div>
   )

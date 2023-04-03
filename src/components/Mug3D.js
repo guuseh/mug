@@ -3,16 +3,11 @@ import { Canvas } from "@react-three/fiber"
 import { OrbitControls, useGLTF } from "@react-three/drei";
 import { StyleSheet, css } from "aphrodite"
 
-// import { withErrorBoundary } from "react-error-boundary";
-// import Box from "../components/Box"
-// import { Model } from "../components/Firstmug";
-// import styled from "styled-components";
+const steps = ["/mug/1.glb", "/mug/2.glb","/mug/3.glb", "/mug/4.glb", "/mug/5.glb", 
+               "/mug/6.glb", "/mug/7.glb", "/mug/8.glb", "/mug/9.glb", "/mug/10.glb",
+               "/mug/11.glb","/mug/12.glb","/mug/13.glb","/mug/14.glb", "/mug/15.glb",
+               "/mug/16.glb","/mug/17.glb","/mug/18.glb","/mug/19.glb","/mug/20.glb",];
 
-// const Wrapper.style={
-//     canvas{
-//       height: 500px;
-//     }`};
-const steps = ["firstmug.glb", "poly2.glb"];
 
 const styles = StyleSheet.create({
   canvas: {
@@ -21,13 +16,16 @@ const styles = StyleSheet.create({
     top: "50%",
     left: "50%",
     transform: "translate(-50%,-50%)",
-    border: "1px solid",
+    boxShadow: "1px 1px 20px #62A357",
     width: "35vw",
+    backgroundColor: "#FAFCFA",
+    zIndex: "0",
   "@media (max-width: 600px)":{
     width: "90vw",
   }
 }
 });
+
 
 function Model({trigger}){
 
@@ -36,10 +34,10 @@ function Model({trigger}){
 
   
       const nextStep = () =>  {
-      if(hasNextStep) {
-      setCurrentStep(currentStep => currentStep += 1);
-      } else{
-        setCurrentStep(0);
+        if(hasNextStep) {
+          setCurrentStep(currentStep => currentStep += 1);
+        } else{
+          setCurrentStep(0);
       }}
 
   
@@ -51,11 +49,11 @@ function Model({trigger}){
 
 
   const baseUrl = steps[currentStep];
-
   const gltf = useGLTF(baseUrl);
-  return <primitive object ={gltf.scene} />
 
-    }
+  return <primitive object ={gltf.scene} />
+  }
+
 
 export default function Mug3D({trigger}) {
 
@@ -74,5 +72,3 @@ export default function Mug3D({trigger}) {
     </>
   )
 }
-
-useGLTF.preload("firstmug.glb");

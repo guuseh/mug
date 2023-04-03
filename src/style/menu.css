@@ -1,23 +1,107 @@
 .menuOn{
-    position: sticky;
-    /* background-image: url("../style/testfabric2.png"); */
-    /* background-size: 100% 100%; */
-    padding: 2rem;
-    padding-bottom: 3rem;
-    /* border: solid black; */
+    position: fixed;
     width: max-content;
+    font-size: 0.9rem;
+    line-height: 1.2rem;
+    bottom: 0;
+    margin: 0.5rem;
+    animation-name: menu;
+    animation-duration: 0.3s;
+    transform-origin: bottom center;
+}
+
+
+@keyframes menu{
+    0% {
+        transform: scaleY(0)
+    }
+    100%{ transform: scaleY(1)}
+}
+
+.menuOff{
+    display: block;
+    position: fixed;
+    width: max-content;
+    font-size: 0.9rem;
+    line-height: 1.2rem;
+    bottom: 0;
+    margin: 0.5rem;
+    animation-name: menuDown;
+    animation-duration: 0.3s;
+    transform-origin: top center;
+    transform: scaleX(1);
+}
+.topCer{
+    width: 10vw;
 }
 
 .menuItem{
-    margin-bottom: 0.3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    cursor: pointer;
+    background-color: white;
+    margin-top: 3px;
+    box-shadow: 1px 1px 5px #62A357;
+    transition: background-color 0.4s, transform 0.4s;
+}
+
+.menuItem:hover{
+    background-color: #62A357;
+    transform: translateX(5px);
+}
+
+#return{
+    text-align: right;
 }
 
 .toggle{
-    position: sticky;
+    display: none;
+    position: fixed;
     bottom: 0.3rem;
-    /* background-image: url("../style/testfabric2.png"); */
-    /* background-size: 100% 100%; */
     padding: 0.2rem 2rem 0.2rem 2rem;
-    /* border: solid black; */
     width: max-content;
+}
+#menuBG{
+    bottom: 0;
+    height: 1rem;
+}
+
+.moveOut{
+    animation: moveOut 0.5s linear;
+}
+
+@keyframes moveOut{
+    from { transform: translateX(0)}
+    to { transform: translateX(100vw)}
+}
+
+@media only screen and (max-width: 600px){
+    .menuOff{
+        animation-name: menuDown;
+        animation-duration: 0.3s;
+        transform-origin: bottom left;
+        transform: scaleX(0);
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+    .menuOn{
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+    @keyframes menuDown{
+        0% {
+            transform: scaleX(1)
+        }
+        100%{ transform: scaleX(0)}
+    }
+    .toggle{
+        display: block;
+        position: fixed;
+        bottom: 0.3rem;
+        padding: 0.2rem 2rem 0.2rem 2rem;
+        width: max-content;
+        }
+    .topCer{
+        display: none;
+    }
 }

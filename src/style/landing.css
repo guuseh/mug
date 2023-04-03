@@ -1,15 +1,14 @@
 body{
     height: 100%;
-    /* margin: 2rem; */
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    background-color: #EDF4EC;
 }
 
 .landing{
     margin: 0rem;
     height: 100%;
-    /* overflow:auto; */
     box-sizing: border-box;
 }
 
@@ -24,6 +23,9 @@ body{
     margin: 2rem 0rem 0rem 0rem;
     padding-left: 2rem;
     top: 0;
+    text-shadow: 1px 1px 5px #62A357;
+    animation: slideIn 0.5s ease-out;
+    width: 100vw;
 }
 
  .header img{
@@ -31,32 +33,50 @@ body{
     padding-left: 2rem;
 } 
 
+@keyframes slideIn{
+    0% { transform: translateX(-100vw)}
+    100% { transform: translateX(0)}
+}
+@keyframes opacity{
+    0% { opacity: 0 }
+    100% { opacity: 1 }
+}
+
 .introduction{
     width: 50vw;
     padding: 2rem;
-    border: 1px solid black;
-    background-color: white;
+    background-color: #FAFCFA;
+    box-shadow: 1px 1px 20px #62A357;
     margin-top: 40vh;
     margin-left: 4rem;
+    animation: slideIn 0.7s ease-out;
 }
 
 .footer{
     box-sizing: border-box;
     position: relative;
     bottom: 0;
-    /* background-image: url("../style/testfabric2.png"); */
-    /* background-size: 100% 100%; */
     width: 95vw;
     padding: 5rem 0rem 1rem 0rem;
 }
+
 .footer h3{
     padding: 1rem;
     position: absolute;
-    /* background-image: url("../style/testfabric2.png"); */
-    /* background-size: 100% 100%; */
     z-index: 10;
     right: 0;
+    text-shadow: 1px 1px 5px #62A357;
 }
+.footer h3:hover{
+    animation: wiggle 0.9s ease infinite;
+}
+@keyframes wiggle{
+    0% { transform: translateX(0px)}
+    50% { transform: translateX(5px)}
+    100% { transform: translateX(0px)}
+}
+
+
 #end{
     width: 95vw;
     position: relative;
@@ -67,9 +87,14 @@ body{
 .paragraph{
     position: relative;
     margin-bottom: 3rem;
-    /* border: solid white; */
 }
 #synergy{
+    width: 40vw;
+    left: 50vw;
+    position: absolute;
+    z-index: -1;
+}
+.smallfam{
     width: 40vw;
     left: 50vw;
     position: absolute;
@@ -78,16 +103,20 @@ body{
 .images{
     position: absolute;
     z-index: 20;
-    height: 100%;
     pointer-events: none;
+    height: 300%;
+}
+.images4{
+    position: absolute;
+    z-index: 20;
+    pointer-events: none;
+    height: 100%;
 }
 #one{
     position: absolute;
-    height: 17vh;
+    height: 10vh;
     top: 150vh;
     left: 20vw;
-    /* transform: translateZ(100px) scale(.71); */
-    /* border: solid white; */
 }
 #two{
     position: absolute;
@@ -107,21 +136,93 @@ body{
     height: 15vh;
     left: 55vw;
     top: 100vh;
-    /* border: solid white; */
     transform: scaleX(-1);
-    filter: hue-rotate(270deg);
 }
+#five{
+    position: absolute;
+    height: 15vh;
+    top: 170vh;
+    left: 0vw;
+}
+#six{
+    position: absolute;
+    height: 17vh;
+    top: 200vh;
+    left: 90vw;
+}
+#seven{
+    position: absolute;
+    height: 7vh;
+    top: 215vh;
+    left: 89vw;
+}
+#eight{
+    position: absolute;
+    height: 17vh;
+    top: 240vh;
+    left: 50vw;
+}
+#nine{
+    position: absolute;
+    height: 12vh;
+    top: 300vh;
+    left: 20vw;
+}
+#ten{
+    position: absolute;
+    height: 15vh;
+    top: 350vh;
+    left: 2vw;
+}
+#eleven{
+    position: absolute;
+    height: 5vh;
+    top: 360vh;
+    left: 10vw;
+}
+#twelve{
+    position: absolute;
+    height: 17vh;
+    top: 360vh;
+    left: 55vw;
+}
+
+
 
 @media only screen and (max-width: 600px){
     .introduction{
         width: 95vw;
         box-sizing: border-box;
-        margin: 30vh 2vw 0 2vw;
+        margin: 20vh 2vw 0 2vw;
     }
+    .header img{
+        display: none;
+    } 
     .footer{
         padding: 0;
     }
     .footer h3{
         padding-bottom: 2rem;
+    }
+    #synergy{
+        display: none;
+    }
+    .smallfam{
+        display: none;
+    }
+    .landing{
+        max-width: 100vw;
+    }
+    #four{
+        height: 10vh;
+        left: 60vw;
+    }
+    #six{
+        left: 70vw;
+        height: 10vh;
+    }
+    #seven{
+        left:74vw;
+        height: 5vh;
     }
   }
