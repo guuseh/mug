@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import "../style/menu.css"
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, NavLink } from 'react-router-dom'
 
 export default function Menu({toggle}) {
     
@@ -14,7 +14,7 @@ export default function Menu({toggle}) {
         {  toggle ? 
         <div className="menuOn">
           <img src="img/cer/10.png" className="topCer"/>
-          <div className="menuItem" onClick={() => {navigate('/archive')}}><img src="/img/cer/3.png" id="menuBG" />&nbsp;drawing archive</div>
+            <div className="menuItem" onClick={() => {navigate('/archive')}}><img src="/img/cer/3.png" id="menuBG" />&nbsp;drawing archive</div>
             <div className="menuItem" onClick={() => {navigate('/collection')}}><img src="/img/cer/1.png" id="menuBG" />&nbsp;collection 1</div>
             <div className="menuItem" onClick={() => {navigate('/exhibits')}}><img src="/img/cer/2.png" id="menuBG" />&nbsp;past exhibitions</div>
             <div className="menuItem" onClick={() => {navigate('/text')}}><img src="/img/cer/5.png" id="menuBG" />&nbsp;text+bibliography</div>
@@ -27,7 +27,7 @@ export default function Menu({toggle}) {
         : 
         <div className="menuOff">
           <img src="img/cer/10.png" className="topCer"/>
-          <div className="menuItem" onClick={() => {navigate('/archive')}}><img src="/img/cer/3.png" id="menuBG" />&nbsp;drawing archive</div>
+            <div className="menuItem" onClick={() => {navigate('/archive')}}><img src="/img/cer/3.png" id="menuBG" />&nbsp;drawing archive</div>
             <div className="menuItem" onClick={() => {navigate('/collection')}}><img src="/img/cer/1.png" id="menuBG" />&nbsp;collection 1</div>
             <div className="menuItem" onClick={() => {navigate('/exhibits')}}><img src="/img/cer/2.png" id="menuBG" />&nbsp;past exhibitions</div>
             <div className="menuItem" onClick={() => {navigate('/text')}}><img src="/img/cer/5.png" id="menuBG" />&nbsp;text+bibliography</div>

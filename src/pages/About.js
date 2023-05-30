@@ -47,8 +47,7 @@ export default function About() {
 
       <h3>(de)constructing family models</h3>
       
-      <p><span className="hili">Guus Hoeberechts</span> - 
-      <a href="https://www.instagram.com/guus.eh/">ig </a> <br/>
+      <p><span className="hili">Guus Hoeberechts</span> <br/>
       <span className="hili">2022</span></p>
 
       <p>&nbsp;&nbsp;&nbsp;&nbsp;What are the normative ideas that surround ‘the family’ and how far can you deviate from them and still be considered one? 
@@ -82,12 +81,14 @@ export default function About() {
       <p>If you have any questions, don't hesitate to reach out. If you're interested in being interviewed to work on your own personal cup to add 
         to the collection, send me an e-mail and I will get back to you. It might take a while (I'm following a Master's programme at the moment), but 
         I'd love to get in touch:
-        <br/><br/>
-        &nbsp;&nbsp;&nbsp;&nbsp;<a href="mailto:guus@familymodels.website">guus @ familymodels.website</a>
+        <br/>
+        <a href="mailto:guus@familymodels.website">guus @ familymodels.website</a>
         <br/><br/>
         If you added something to the archive that you regret and would like to get removed, send me an e-mail here and I will take it out the database:
+        <br/>
+        <a href="mailto:archive@familymodels.website">archive @ familymodels.website</a>
         <br/><br/>
-        &nbsp;&nbsp;&nbsp;&nbsp;<a href="mailto:archive@familymodels.website">archive @ familymodels.website</a>
+        Check out my other projects on <a href="https://guushoeberechts.nl/" target="_blank">guushoeberechts.nl</a> or on my <a href="https://www.instagram.com/guus.eh/" target="_blank">instagram</a> 
       </p>
 
       <img src="img/cer/14.png" style={bottomImg} className="cerImg" />

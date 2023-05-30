@@ -34,7 +34,9 @@ export default function Collection() {
       
       <h1>first collection</h1>
 
-      <p style={ blur ? {animationName:"blur", animationDuration:"0.1s", filter:"blur(4px)"} : {} }>The first collection of milk cups, based on <span className="hili">twenty honest conversations about the family.</span> </p>
+      <p style={ blur ? {animationName:"blur", animationDuration:"0.1s", filter:"blur(4px)"} : {} }>
+        The first collection of milk cups, based on twenty honest conversations about the family.
+        <br/><span className="hili">» Click on the cups to enlarge.</span></p>
       <div className="imageContainer" style={ blur ? {animationName:"blur", animationDuration:"0.1s", filter:"blur(4px)"} : {} }>
 
         <div><img src="img/mugpng/mugs1.png" className="mugImg" onClick={() => {setCurrentMug("/mug/9.glb"); setBlur(true)}} /></div>

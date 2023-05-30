@@ -2,10 +2,12 @@ import React, { useEffect } from 'react'
 import { Stage, Layer, Line } from "react-konva";
 import "../style/drawing.css";
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom'
 
 
 export default function DrawingCanvas({submit}) {
 
+    const navigate = useNavigate()
     const [tool, setTool] = React.useState('pen');
     const [lines, setLines] = React.useState([]);
     const [colorArray, setColorArray] = React.useState([]);
@@ -66,7 +68,9 @@ export default function DrawingCanvas({submit}) {
                 "uri": stageRef.current.toDataURL()
             }
             try{
+                
                 await axios.post("https://backend-production-8f5a.up.railway.app/archive", imageObject)
+                navigate('/archive')
             }catch(err){
                 console.log(err)
             }

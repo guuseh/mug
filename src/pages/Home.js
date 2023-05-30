@@ -146,7 +146,8 @@ export default function Home() {
       </div>
 
       <div className="footer">
-        <Link to="/mug"><h3>enter»</h3></Link>
+        {/* <Link to="/mug"><h3>enter»</h3></Link>*/}
+        <h3 className="click" onClick = {() => {window.location.href = "https://familymodels.website/mug"}}>enter»</h3>
       </div>
 
     </div>

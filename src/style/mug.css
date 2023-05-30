@@ -1,14 +1,16 @@
 .mugCss{
-    margin: 2rem;
+    overflow: hidden;
     height: 100vh;
+    padding: 2rem;
+    box-sizing: border-box;
 } 
 
 .text{
     height: 80vh;
     max-height: max-content;
     width: 30vw;
-    margin-left: 2rem;
-    margin-right: 2rem;
+    padding-left: 1rem;
+    padding-right: 2rem;
     position: absolute;
     left: 67vw;
     top: 10vh;
@@ -56,6 +58,7 @@
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
+    animation: wiggle 0.9s ease infinite;
 }
 .nextButton:hover{
     animation: wiggle 0.9s ease infinite;
@@ -102,12 +105,13 @@
     .text{
         width: 75vw;
         top: 25vh;
-        left: 0;
+        left: 8vw;
         background-color: white;
         height: 40vh;
         position: absolute;
         box-shadow: 1px 1px 20px #62A357;
         padding: 1rem;
+        z-index: 20;
     } 
     .h1mug{
         width: 90vw;
@@ -130,5 +134,12 @@
     }
     .threed{
         display: none;
+    }
+    #next{
+        position: absolute;
+        left: 50vw;
+        top: 75vh;
+        transform: translate(-50%,-50%);
+        width: max-content;
     }
 }

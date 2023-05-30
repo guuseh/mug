@@ -12,17 +12,16 @@ export default function Mug() {
   const [desc, setDesc] = useState(true);
  
   useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "smooth"
-    });
-    document.body.style.overflow = "hidden";
+    setTimeout(() => {
+      
+      document.querySelector('#root').style.display = "inline-block";
+    }, 10)
+    // document.body.style.overflow = "hidden";
   },[])
 
-  // React.useEffect(() => {
-  //    document.body.style.overflow = "hidden";
-  //     }, []);
+  React.useEffect(() => {
+     document.body.style.overflow = "hidden";
+      }, []);
 
   React.useEffect( () => () => {
      document.body.style.overflow = "visible";

@@ -22,26 +22,30 @@ export default function Archive() {
   const [images, setImages] = useState([])
   const [spinner, setSpinner] = useState(false);
 
+  
   const handleMenu = () => {
     setToggle(!toggle)
     setIcon(!icon)
     setBg(!bg)
   }
 
-  useEffect(() => {
-    const fetchAll = async () => {
-      setSpinner(true);
-      try{
-        const res = await axios.get("https://backend-production-8f5a.up.railway.app/archive")
-        console.log(res)
-        setImages(res.data)
-        setSpinner(false)
-      }catch(err){
-        console.log(err)
-      }
+  const [amount, setAmount] = useState(15)
+
+  const fetchAll = async (amount) => {
+    setSpinner(true);
+    try{
+      const res = await axios.get("https://backend-production-8f5a.up.railway.app/archive?amount=" + amount)
+      console.log(res)
+      setImages(res.data)
+      setSpinner(false)
+    }catch(err){
+      console.log(err)
     }
-    fetchAll()
-  }, [])
+  }
+
+  useEffect(() => { 
+    fetchAll(amount)
+  }, [amount])
 
   const bottomImg = {
     position: "absolute",
@@ -69,18 +73,21 @@ export default function Archive() {
         It is a collection that details all possible differences in meaning. 
       </p>
 
-      { spinner &&
-       <div className="loading"><br/><br/>loading...</div>}
 
       <div className="imageContainer">
         
-        { images.slice(0).reverse().map(image => 
+        { images.slice(0).map(image => 
             <div key={image.id} className="archiveimg" >
-              <img src={image.uri} onClick = { () => console.log("id:" + image.id)}/>
+              <img src={image.uri} onClick= { () => console.log("id:" + image.id)}/>
             </div>) 
-        }
+        }   
 
       </div>
+
+      { spinner ?
+       <div className="loading"><br/>loading archive...</div>
+      : 
+      <div className="loading click" onClick={() => {setAmount((amount) => amount + 15)}}>» load more «</div> }
 
       <img src="img/cer/2.png" style={bottomImg} className="cerImg"/>
       

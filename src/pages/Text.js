@@ -113,8 +113,8 @@ export default function Text() {
       Pater, R. (2021). <span className="hili">CAPS LOCK</span><br/>
       Sahlins, M. (2013). <span className="hili">What Kinship Is - And Is Not</span><br/>
       Coontz, S. (1989). <span className="hili">The Social Origins of Private Life</span><br/>
-      Brooks, D. (2020). <span className="hili">The Nuclear Family was a Mistake</span>. <a href="https://www.theatlantic.com/magazine/archive/2020/03/the-nuclear-family-was-a-mistake/605536/">link</a><br/>
-      iResearchNet <span className="hili">Family and Community</span>. <a href="https://sociology.iresearchnet.com/sociology-of-family/family-and-community/">link</a><br/>
+      Brooks, D. (2020). <span className="hili">The Nuclear Family was a Mistake</span>. <a href="https://www.theatlantic.com/magazine/archive/2020/03/the-nuclear-family-was-a-mistake/605536/" target="_blank">link</a><br/>
+      iResearchNet <span className="hili">Family and Community</span>. <a href="https://sociology.iresearchnet.com/sociology-of-family/family-and-community/" target="_blank">link</a><br/>
       </p>
 
     </div>

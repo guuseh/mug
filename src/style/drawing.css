@@ -59,11 +59,11 @@ body{
 
 .close{
     position: relative;
-    left: 1rem;
+    left: 2rem;
     width: min-content;
 }
 .close h4{
-    padding: 0.5rem 2rem 0.5rem 2rem;
+    padding: 0.5rem 1rem 0.5rem 1rem;
 }
 
 .buttons{
@@ -152,13 +152,13 @@ body{
     }
     .close{
         position: fixed;
-        left: 75vw;
+        left: 77vw;
         top: 5vh;
     }
     .close h4{
         /* border: solid 0.5px white; */
-        width: min-content;
-        padding: 0.5rem 2rem 0.5rem 2rem;
+        width: max-content;
+        padding: 0.5rem 2rem 0.5rem 1rem;
         /* border-radius: 1rem; */
         /* background: white; */
         /* background-image: url("../style/testfabric2.png"); */

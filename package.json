@@ -1,5 +1,6 @@
 {
   "name": "mug",
+  "homepage": "https://familymodels.website/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

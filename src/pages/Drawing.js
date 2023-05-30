@@ -13,6 +13,7 @@ export default function Drawing() {
     const [popUp, setPopUp] = useState(false);
     const [count, setCount] = useState(80)
     const [submit, setSubmit] = useState(0);
+    const [spinner, setSpinner] = useState(false);
 
 
     useEffect(() => {
@@ -40,7 +41,7 @@ export default function Drawing() {
 
     const handleSubmit = () => {
       setSubmit((submit) => submit + 1);
-      setTimeout(()=> {navigate('/archive');},150); 
+      setSpinner(true);
     }
 
 
@@ -50,7 +51,7 @@ export default function Drawing() {
         <h1>What do you <br/>think?</h1>
         
         <div className="close click" onClick={handleText}>
-          <h4>{icon ? `close↑` : "info↓"}</h4>
+          <h4 className="hili">{icon ? `close↑` : "inst.↓"}</h4>
         </div>
 
         <div className="explanation" style={ explanation ? {animation: "in 0.2s linear "} : {animation: "out 0.2s linear normal forwards"} }>
@@ -64,7 +65,7 @@ export default function Drawing() {
              → How would you describe the concept of the family? <br/>
              → <span className="hili">How would you visualise it?</span>
 
-            <br/><br/>Close to start drawing.
+            <br/><br/><h4 className="hili click" style={{display:"inline"}} onClick={handleText}>»Close</h4> to start drawing.
         </p>
         </div>
         
@@ -82,11 +83,21 @@ export default function Drawing() {
         { popUp ? 
         <div className="disableBg">
         <div className="popUp">
-          <p>Are you sure you want to submit? This drawing will be publicly available for anyone to see.</p>
-          <div className="buttonsPopUp">
-            <h3 onClick={() => {setPopUp(false); setButton(!button)}} className="click">cancel</h3>
-            <h3 onClick={handleSubmit} className="click">submit</h3>
-          </div>
+
+          { spinner ? 
+              <p style={{color:"#62A357", textAlign: "center"}}>submitting...</p> 
+              :
+              <div>
+              <p>Are you sure you want to submit? This drawing will be publicly available for anyone to see.</p>
+
+              <div className="buttonsPopUp">
+                <h3 onClick={() => {setPopUp(false); setButton(!button)}} className="click">cancel</h3>
+                <h3 onClick={handleSubmit} className="click">submit</h3>
+               </div>
+              </div>
+              }
+              
+          
         </div>
         </div> 
         : "" }
